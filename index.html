@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Din Firma</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #0587bb;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        #logo {
+            width: 50px; /* Indstil bredden til dit logo */
+        }
+        #company-name {
+            font-weight: bold;
+        }
+        .content-box {
+            background-color: #87CEEB; /* Lyseblå baggrundsfarve */
+            border-radius: 10px; /* Afrundede kanter */
+            padding: 20px;
+            margin: 20px;
+            text-align: left;
+        }
+        .circle-button {
+            background-color: #4fb5dd;
+            border: 10px solid #0587bb;
+            border-radius: 50%; /* Gør det til en cirkelknap */
+            color: #fff;
+            font-size: 24px;
+            padding: 40px 40px;
+            margin-top: 100px;
+            width: 250px;
+            height: 250px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img id="logo" src="logo.png" alt="Dit Logo">
+        <div id="company-name">Dit rejsekort</div>
+        <div id="language">320 kr</div>
+        <a href="login.html">Log ind</a>
+    </header>
+    <button class="circle-button">Søger efter rejse</button>
+    <script>
+        const circle = document.querySelector("button");
+        let width = 10;
+        let step = 0.2;
+        function loop() {
+            circle.style.borderWidth = width + "px";
+            width += step;
+            if(width > 25 || width < 10) {
+                step *= -1;
+            }
+            requestAnimationFrame(loop)
+        }
+        requestAnimationFrame(loop);
+    </script>
+    <div class="content-box">
+        <p>Dette er indholdet i din boks med tekst.</p>
+    </div>
+    <header>
+        <div id="company-name">Dine rejser</div>
+        <div id="language">info</div>
+    </header>
+    <!-- Resten af din indhold her -->
+</body>
+</html>
